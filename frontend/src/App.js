@@ -16,6 +16,5 @@ const App = () => {
     </>
   );
 };
-5;
 
 export default App;
