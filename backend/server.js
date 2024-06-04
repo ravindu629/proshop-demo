@@ -14,6 +14,10 @@ connectDB();
 //initialize express
 const app = express();
 
+//body parser middleware to access the body data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
 
