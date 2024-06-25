@@ -102,6 +102,7 @@ const ProfileScreen = () => {
           >
             Update
           </Button>
+          {loadingUpdateProfile && <Loader />}
         </Form>
       </Col>
       <Col md={9}>
