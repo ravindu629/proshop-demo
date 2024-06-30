@@ -7,9 +7,10 @@ import Message from "../components/Message";
 import Paginate from "../components/Paginate";
 
 const HomeScreen = () => {
-  const { pageNumber } = useParams();
+  const { keyword, pageNumber } = useParams();
 
   const { data, isLoading, error } = useGetProductsQuery({
+    keyword,
     pageNumber,
   });
 
@@ -31,7 +32,11 @@ const HomeScreen = () => {
               </Col>
             ))}
           </Row>
-          <Paginate pages={data.pages} page={data.page} />
+          <Paginate
+            pages={data.pages}
+            page={data.page}
+            keyword={keyword ? keyword : ""}
+          />
         </>
       )}
     </>
